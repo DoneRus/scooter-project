@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Scooter Parts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="sp-auth-body">
+  <header class="sp-header sp-header--auth">
+    <div class="sp-container sp-header__inner">
+      <div class="sp-logo">Scooter<span>Parts</span></div>
+      <nav class="sp-nav">
+        <a href="index.html" class="sp-nav__link">Webshop</a>
+        <a href="register.html" class="sp-nav__link sp-nav__link--outline">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sp-main sp-main--auth">
+    <section class="sp-auth-card">
+      <div class="sp-auth-card__header">
+        <h1>Welcome back</h1>
+        <p>Log in to manage your orders and saved carts.</p>
+      </div>
+
+      <form class="sp-form" action="#" method="post">
+        <div class="sp-form__field">
+          <label for="loginEmail" class="sp-label">Email</label>
+          <input id="loginEmail" name="email" type="email" class="sp-input" required />
+        </div>
+
+        <div class="sp-form__field">
+          <label for="loginPassword" class="sp-label">Password</label>
+          <input id="loginPassword" name="password" type="password" class="sp-input" required />
+        </div>
+
+        <div class="sp-form__field sp-form__field--inline sp-form__field--space-between">
+          <div>
+            <input id="rememberMe" name="rememberMe" type="checkbox" class="sp-checkbox" />
+            <label for="rememberMe" class="sp-label sp-label--inline">Remember me</label>
+          </div>
+          <a href="#" class="sp-link sp-link--muted">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="sp-btn sp-btn--primary sp-btn--full">Log in</button>
+
+        <p class="sp-auth-switch">
+          New to ScooterParts?
+          <a href="register.html" class="sp-link">Create an account</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sp-footer sp-footer--auth">
+    <div class="sp-container sp-footer__inner">
+      <span>© <span id="year"></span> ScooterParts</span>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
+
+

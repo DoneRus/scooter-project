@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create Account - Scooter Parts</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="sp-auth-body">
+  <header class="sp-header sp-header--auth">
+    <div class="sp-container sp-header__inner">
+      <div class="sp-logo">Scooter<span>Parts</span></div>
+      <nav class="sp-nav">
+        <a href="index.html" class="sp-nav__link">Webshop</a>
+        <a href="login.html" class="sp-nav__link sp-nav__link--outline">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sp-main sp-main--auth">
+    <section class="sp-auth-card">
+      <div class="sp-auth-card__header">
+        <h1>Create your account</h1>
+        <p>Track orders, save carts, and get faster checkout.</p>
+      </div>
+
+      <form class="sp-form" action="#" method="post">
+        <div class="sp-form__row sp-form__row--split">
+          <div class="sp-form__field">
+            <label for="firstName" class="sp-label">First name</label>
+            <input id="firstName" name="firstName" type="text" class="sp-input" required />
+          </div>
+          <div class="sp-form__field">
+            <label for="lastName" class="sp-label">Last name</label>
+            <input id="lastName" name="lastName" type="text" class="sp-input" required />
+          </div>
+        </div>
+
+        <div class="sp-form__field">
+          <label for="email" class="sp-label">Email</label>
+          <input id="email" name="email" type="email" class="sp-input" required />
+        </div>
+
+        <div class="sp-form__field">
+          <label for="password" class="sp-label">Password</label>
+          <input id="password" name="password" type="password" class="sp-input" required minlength="6" />
+        </div>
+
+        <div class="sp-form__field">
+          <label for="confirmPassword" class="sp-label">Confirm password</label>
+          <input id="confirmPassword" name="confirmPassword" type="password" class="sp-input" required minlength="6" />
+        </div>
+
+        <div class="sp-form__field sp-form__field--inline">
+          <input id="newsletter" name="newsletter" type="checkbox" class="sp-checkbox" />
+          <label for="newsletter" class="sp-label sp-label--inline">
+            Send me updates about new scooter parts and deals.
+          </label>
+        </div>
+
+        <button type="submit" class="sp-btn sp-btn--primary sp-btn--full">Create account</button>
+
+        <p class="sp-auth-switch">
+          Already registered?
+          <a href="login.html" class="sp-link">Log in</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="sp-footer sp-footer--auth">
+    <div class="sp-container sp-footer__inner">
+      <span>© <span id="year"></span> ScooterParts</span>
+    </div>
+  </footer>
+
+  <script>
+    // Simple year update for auth pages without loading main.js
+    document.addEventListener('DOMContentLoaded', function () {
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
+
+

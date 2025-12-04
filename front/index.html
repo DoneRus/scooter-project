@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scooter Parts Webshop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="sp-header">
+    <div class="sp-container sp-header__inner">
+      <div class="sp-logo">Scooter<span>Parts</span></div>
+      <nav class="sp-nav">
+        <a href="index.html" class="sp-nav__link sp-nav__link--active">Webshop</a>
+        <a href="register.html" class="sp-nav__link">Register</a>
+        <a href="login.html" class="sp-nav__link sp-nav__link--outline">Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="sp-main sp-container">
+    <section class="sp-hero">
+      <div class="sp-hero__content">
+        <h1>Premium Parts for Your Scooter</h1>
+        <p>Upgrade, repair, and customize your ride with high‑quality scooter components.</p>
+      </div>
+      <div class="sp-hero__badge">Free shipping over $99</div>
+    </section>
+
+    <section class="sp-layout">
+      <div class="sp-products">
+        <div class="sp-products__header">
+          <h2>Webshop</h2>
+          <input
+            type="text"
+            id="searchInput"
+            class="sp-input sp-input--search"
+            placeholder="Search parts (e.g. brake, tire, battery)..."
+          />
+        </div>
+
+        <div class="sp-filters">
+          <button class="sp-chip sp-chip--active" data-filter="all">All</button>
+          <button class="sp-chip" data-filter="brakes">Brakes</button>
+          <button class="sp-chip" data-filter="tires">Tires</button>
+          <button class="sp-chip" data-filter="electronics">Electronics</button>
+          <button class="sp-chip" data-filter="accessories">Accessories</button>
+        </div>
+
+        <div class="sp-grid" id="productGrid">
+          <!-- Example products (static) -->
+          <article class="sp-card" data-category="brakes" data-name="Performance Disc Brake Kit">
+            <div class="sp-card__badge">Best seller</div>
+            <h3 class="sp-card__title">Performance Disc Brake Kit</h3>
+            <p class="sp-card__subtitle">Improved stopping power for urban riding.</p>
+            <div class="sp-card__meta">
+              <span class="sp-card__price">$79.00</span>
+              <span class="sp-card__stock sp-card__stock--in">In stock</span>
+            </div>
+            <button class="sp-btn sp-btn--primary add-to-cart" data-id="1" data-name="Performance Disc Brake Kit" data-price="79">
+              Add to cart
+            </button>
+          </article>
+
+          <article class="sp-card" data-category="tires" data-name="All‑Weather Grip Tire">
+            <h3 class="sp-card__title">All‑Weather Grip Tire</h3>
+            <p class="sp-card__subtitle">Extra traction for wet and rough surfaces.</p>
+            <div class="sp-card__meta">
+              <span class="sp-card__price">$45.00</span>
+              <span class="sp-card__stock sp-card__stock--in">In stock</span>
+            </div>
+            <button class="sp-btn sp-btn--primary add-to-cart" data-id="2" data-name="All‑Weather Grip Tire" data-price="45">
+              Add to cart
+            </button>
+          </article>
+
+          <article class="sp-card" data-category="electronics" data-name="Long‑Range Battery Pack">
+            <div class="sp-card__badge sp-card__badge--dark">New</div>
+            <h3 class="sp-card__title">Long‑Range Battery Pack</h3>
+            <p class="sp-card__subtitle">Extend your range up to 40 km per charge.</p>
+            <div class="sp-card__meta">
+              <span class="sp-card__price">$199.00</span>
+              <span class="sp-card__stock sp-card__stock--low">Low stock</span>
+            </div>
+            <button class="sp-btn sp-btn--primary add-to-cart" data-id="3" data-name="Long‑Range Battery Pack" data-price="199">
+              Add to cart
+            </button>
+          </article>
+
+          <article class="sp-card" data-category="accessories" data-name="LED Safety Light Set">
+            <h3 class="sp-card__title">LED Safety Light Set</h3>
+            <p class="sp-card__subtitle">Front and rear lights for safe night riding.</p>
+            <div class="sp-card__meta">
+              <span class="sp-card__price">$25.00</span>
+              <span class="sp-card__stock sp-card__stock--in">In stock</span>
+            </div>
+            <button class="sp-btn sp-btn--primary add-to-cart" data-id="4" data-name="LED Safety Light Set" data-price="25">
+              Add to cart
+            </button>
+          </article>
+
+          <article class="sp-card" data-category="brakes" data-name="Ceramic Brake Pads">
+            <h3 class="sp-card__title">Ceramic Brake Pads</h3>
+            <p class="sp-card__subtitle">Quiet, long‑lasting pads for daily use.</p>
+            <div class="sp-card__meta">
+              <span class="sp-card__price">$35.00</span>
+              <span class="sp-card__stock sp-card__stock--in">In stock</span>
+            </div>
+            <button class="sp-btn sp-btn--primary add-to-cart" data-id="5" data-name="Ceramic Brake Pads" data-price="35">
+              Add to cart
+            </button>
+          </article>
+        </div>
+      </div>
+
+      <aside class="sp-cart" aria-label="Shopping cart">
+        <div class="sp-cart__header">
+          <h2>Your Cart</h2>
+          <span class="sp-cart__count"><span id="cartCount">0</span> items</span>
+        </div>
+        <div class="sp-cart__body" id="cartItems">
+          <p class="sp-cart__empty">Your cart is empty. Start adding scooter parts!</p>
+        </div>
+        <div class="sp-cart__footer">
+          <div class="sp-cart__row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">$0.00</span>
+          </div>
+          <div class="sp-cart__row sp-cart__row--muted">
+            <span>Estimated tax</span>
+            <span id="cartTax">$0.00</span>
+          </div>
+          <div class="sp-cart__row sp-cart__row--strong">
+            <span>Total</span>
+            <span id="cartTotal">$0.00</span>
+          </div>
+          <button class="sp-btn sp-btn--primary sp-btn--full" id="checkoutBtn">
+            Proceed to checkout
+          </button>
+          <p class="sp-cart__hint">
+            Already have an account?
+            <a href="login.html" class="sp-link">Log in</a> before checkout.
+          </p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="sp-footer">
+    <div class="sp-container sp-footer__inner">
+      <span>© <span id="year"></span> ScooterParts. All rights reserved.</span>
+      <span class="sp-footer__note">Built for fast, safe city riding.</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+
