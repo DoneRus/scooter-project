@@ -1,4 +1,5 @@
-<?PHP
+<?php
+
 //Console setup insteod of echo
 function debug_to_console($data) {
     $output = $data;
@@ -11,7 +12,7 @@ function debug_to_console($data) {
 abstract class DB {
     private static $username = "root";
     private static $password = "";
-    private static $dsn = "mysql:host=localhost;dbname=test;charset=utf8";
+    private static $dsn = "mysql:host=localhost;dbname=scooterdatabase;charset=utf8";
     public static $affected_rows;
 //Database connetion for 003_a
     public static function connect(){

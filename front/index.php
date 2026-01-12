@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scooter Parts Webshop</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="../style/styles.css" />
 </head>
 <body>
   <header class="sp-header">
@@ -12,8 +12,8 @@
       <div class="sp-logo">Scooter<span>Parts</span></div>
       <nav class="sp-nav">
         <a href="index.html" class="sp-nav__link sp-nav__link--active">Webshop</a>
-        <a href="register.html" class="sp-nav__link">Register</a>
-        <a href="login.html" class="sp-nav__link sp-nav__link--outline">Login</a>
+        <!--<a href="register.html" class="sp-nav__link">Register</a> --->
+      <!--  <a href="login.html" class="sp-nav__link sp-nav__link--outline">Login</a> -->
       </nav>
     </div>
   </header>
@@ -156,5 +156,9 @@
   <script src="main.js"></script>
 </body>
 </html>
+<?php
+include '../back/General.php';
+
+?>
 
 
